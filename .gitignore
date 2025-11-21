@@ -41,6 +41,13 @@ yarn-error.log*
 next-env.d.ts
 
 
+This page assumes that you already have an existing Next.js application based on the App Router architecture.
+
+If you want to follow along, you can create a new empty Next project with npx create-next-app my-app - the default prompts will set up a new project with the App Router enabled. Then, add @reduxjs/toolkit and react-redux as dependencies.
+
+You can also create a new Next+Redux project with npx create-next-app --example with-redux my-app, which includes the initial setup pieces described in this page.
+
+
 …or create a new repository on the command line
 echo "# react_redux_toolkits" >> README.md
 git init
