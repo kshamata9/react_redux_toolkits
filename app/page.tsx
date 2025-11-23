@@ -4,7 +4,7 @@ import { increment, decrement, incrementByAmount } from "./features/counterSlice
 import { useAppDispatch, useAppSelector } from "./store/store";
 
 export default function Home() {
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState<string>('');
   const count = useAppSelector((state) => state.counter.count);
   const dispatch = useAppDispatch();
 
