@@ -8,14 +8,14 @@ export default function Number(){
     return (<>
     <h2>Even Numbers</h2>
       <ul>
-        {evenNumbers.map(num => (
+        {evenNumbers.map((num: number) => (
           <li key={num}>{num}</li>
         ))}
       </ul>
 
       <h2>Old Numbers</h2>
       <ul>
-        {oldNumbers.map(num => (
+        {oldNumbers.map((num: number) => (
           <li key={num}>{num}</li>
         ))}
       </ul>
