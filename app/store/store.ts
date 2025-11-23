@@ -2,6 +2,7 @@ import {configureStore} from '@reduxjs/toolkit';
 import userReducer from '../features/userSlice';
 import counterReducer from '../features/counterSlice'
 import postsReducer from '../features/postsSlice';
+import numbersReducer from '../features/numberSlice';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
@@ -13,6 +14,7 @@ export const store = configureStore({
         users: userReducer,
         counter: counterReducer,
         posts: postsReducer,
+        numbers: numbersReducer,
     },
     middleware: (getDefault) => getDefault({ thunk: false }).concat(sagaMiddleware),
 });
