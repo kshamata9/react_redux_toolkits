@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "../store/store";
 
 export default function Users() {
   const dispatch = useAppDispatch();
-  const { users, loading, error } = useAppSelector((state) => state.users.users);
+  const { users, loading, error } = useAppSelector((state) => state.users);
   React.useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);

@@ -6,8 +6,9 @@ import numbersReducer from '../features/numberSlice';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./rootSaga";
+import logger from 'redux-logger';
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware(); 
 
 export const store = configureStore({
     reducer:{
@@ -16,7 +17,10 @@ export const store = configureStore({
         posts: postsReducer,
         numbers: numbersReducer,
     },
-    middleware: (getDefault) => getDefault({ thunk: false }).concat(sagaMiddleware),
+    middleware: (getDefaultMiddleware) => {
+        const middleware = getDefaultMiddleware({ thunk: true }).concat(sagaMiddleware).concat(logger);
+        return middleware;
+    },
 });
 
 sagaMiddleware.run(rootSaga)

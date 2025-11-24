@@ -28,6 +28,7 @@ export default function PostList() {
         Add Post
       </button>
       <table border={1}>
+        <tbody>
         {posts.map((p) => (
           <tr key={p.id}>
             <td>{p.title}</td>
@@ -38,6 +39,7 @@ export default function PostList() {
             </td>
           </tr>
         ))}
+        </tbody>
       </table>
     </>
   );
